@@ -1,0 +1,80 @@
+/* Carousel container */
+.carousel {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+/* List of carousel items */
+.carousel__list {
+  display: flex;
+  list-style: none;
+  position: relative;
+  width: 80%;
+  max-width: 1200px;
+  height: 300px;
+  justify-content: center;
+  perspective: 300px;
+}
+
+/* Each carousel item */
+.carousel__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0px;
+  width: 150px;
+  height: 250px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  position: absolute;
+  transition: all 0.3s ease-in;
+  overflow: hidden; /* Prevent image overflow */
+}
+
+.carousel__item img {
+  width: 100%; /* Make the image fit the container */
+  height: auto; /* Maintain the aspect ratio */
+  object-fit: cover; /* Ensure image covers the area */
+  border-radius: 12px; /* Optionally round the image corners */
+}
+
+/* Styles for specific carousel item positions (keep the rest as is) */
+.carousel__item[data-pos="0"] {
+  z-index: 5;
+}
+
+.carousel__item[data-pos="-1"], .carousel__item[data-pos="1"] {
+  opacity: 0.7;
+  filter: blur(1px) grayscale(10%);
+}
+
+.carousel__item[data-pos="-1"] {
+  transform: translateX(-40%) scale(0.9);
+  z-index: 4;
+}
+
+.carousel__item[data-pos="1"] {
+  transform: translateX(40%) scale(0.9);
+  z-index: 4;
+}
+
+.carousel__item[data-pos="-2"], .carousel__item[data-pos="2"] {
+  opacity: 0.4;
+  filter: blur(3px) grayscale(20%);
+}
+
+.carousel__item[data-pos="-2"] {
+  transform: translateX(-70%) scale(0.8);
+  z-index: 3;
+}
+
+.carousel__item[data-pos="2"] {
+  transform: translateX(70%) scale(0.8);
+  z-index: 3;
+}/*# sourceMappingURL=style.css.map */
